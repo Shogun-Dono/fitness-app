@@ -1,14 +1,14 @@
 {
-  "name": "react-native-template-movieapp",
+  "name": "react-native-template-app",
   "version": "1.0.0",
-  "description": "My custom React Native + Expo + Tailwind template",
-  "keywords": ["react-native", "expo", "template"],
+  "description": "Custom React Native template with Expo + Tailwind setup",
+  "keywords": ["react-native", "template"],
   "main": "template",
-  "files": ["template"],
+  "files": ["template", "template.config.js"],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Shogun-Dono/react-native-app-template.git"
+    "url": "git+https://github.com/Shogun-Dono/react-native-template-app.git"
   },
-  "author": "Your Name",
+  "author": "Shogun-Dono",
   "license": "MIT"
 }
