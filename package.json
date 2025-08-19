@@ -1,18 +1,4 @@
 {
-<<<<<<< HEAD
-  "name": "react-native-template-app",
-  "version": "1.0.0",
-  "description": "Custom React Native template with Expo + Tailwind setup",
-  "keywords": ["react-native", "template"],
-  "main": "template",
-  "files": ["template", "template.config.js"],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Shogun-Dono/react-native-template-app.git"
-  },
-  "author": "Shogun-Dono",
-  "license": "MIT"
-=======
   "name": "expo-template-app",
   "main": "expo-router/entry",
   "version": "1.0.0",
@@ -62,5 +48,4 @@
     "typescript": "~5.8.3"
   },
   "private": true
->>>>>>> b3d316e (React Native Expo TW Template)
 }
