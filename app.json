@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "rn_movie_app",
-    "slug": "rn_movie_app",
+    "name": "fitness-app",
+    "slug": "fitnes-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
