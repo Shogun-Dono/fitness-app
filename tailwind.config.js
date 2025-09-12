@@ -9,8 +9,13 @@ module.exports = {
                 secondary: "#8B0000",
                 tertiary: "#650000",
 
-                bg: "#0F0F0F",
-                bg2: "#171717",
+                bg: "#000000",
+                bg2: "#202020",
+
+                text: {
+                    light: "#000000",
+                    dark: "#FFFFFF",
+                }
             }
         },
     },

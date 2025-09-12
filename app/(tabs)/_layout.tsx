@@ -10,8 +10,6 @@ const fullConfig = resolveConfig(tailwindConfig);
 
 const _Layout = () => {
     // @ts-ignore
-    // @ts-ignore
-    // @ts-ignore
     return (
         <Tabs
             screenOptions={{
@@ -26,6 +24,7 @@ const _Layout = () => {
                 headerShown: true,
                 headerTitleAlign: 'center',
                 headerTintColor: fullConfig.theme.colors.bg2,
+                headerStatusBarHeight: 10,
             }}
         >
             <Tabs.Screen name={"index"} options={{
