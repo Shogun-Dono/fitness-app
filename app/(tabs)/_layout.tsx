@@ -3,33 +3,39 @@ import {Tabs} from "expo-router";
 import resolveConfig from 'tailwindcss/resolveConfig';
 import tailwindConfig from '../../tailwind.config.js';
 import { Ionicons } from '@expo/vector-icons';
+import {useColorScheme} from "nativewind";
 
 const fullConfig = resolveConfig(tailwindConfig);
 
 
 
 const _Layout = () => {
+    const {colorScheme} = useColorScheme();
+
     // @ts-ignore
     return (
         <Tabs
             screenOptions={{
                 tabBarActiveTintColor: fullConfig.theme.colors.primary,
-                tabBarInactiveTintColor: 'grey',
+                tabBarInactiveTintColor: "grey",
                 tabBarStyle: {
-                    backgroundColor: fullConfig.theme.colors.bg2,
+                    backgroundColor: colorScheme === "dark" ? fullConfig.theme.colors.bg2 : "white",
                     height: 80,
                     paddingBottom: 5,
                     paddingTop: 5,
                 },
                 headerShown: true,
-                headerTitleAlign: 'center',
-                // headerTintColor: fullConfig.theme.colors.bg2,
+                headerTitleAlign: "center",
+                headerStyle: {
+                    backgroundColor: colorScheme === "dark" ? fullConfig.theme.colors.bg2 : "white",
+                },
+                headerTintColor: colorScheme === "dark" ? "white" : "black",
                 headerStatusBarHeight: 10,
             }}
         >
             <Tabs.Screen name={"index"} options={{
                 title: 'Dashboard',
-                tabBarIcon: ({focused, color, size }) => (
+                tabBarIcon: ({color, size }) => (
                     <Ionicons name="home" size={size} color={color} />
                 ),
 

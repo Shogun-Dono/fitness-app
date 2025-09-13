@@ -20,26 +20,28 @@ const Profile = ({text, icon, onPress}: listBlockProps) => {
     const {colorScheme, setColorScheme} = useColorScheme()
 
     const profileList =[
-        {text: "Account", icon: <Feather name="user" size={24} color="black" />,
+        {text: "Account", icon: <Feather name="user" size={24} color={colorScheme === "light" ? "black" : "white"} />,
             onPress: () => console.log("Account Pressed")},
+        {text: "Settings", icon: <Feather name="settings" size={24} color={colorScheme === "light" ? "black" : "white"} />,
+            onPress: () => console.log("Settings Pressed")},
 
-        {text: "Theme: " + colorScheme, icon: <MaterialCommunityIcons name="theme-light-dark" size={24} color="black"/>,
+        {text: "Theme: " + colorScheme, icon: <MaterialCommunityIcons name="theme-light-dark" size={24} color={colorScheme === "light" ? "black" : "white"}/>,
             onPress: () => setColorScheme(colorScheme === "light" ? "dark" : "light")}
     ]
 
     return (
-        <View>
+        <View className={"dark:bg-bg"}>
             <FlatList
-                className={"mt-2"}
+                className={"dark:bg-bg"}
                 data={profileList}
                 keyExtractor={(item) => item.text}
                 renderItem={({item}) => (
                     <Pressable
                         onPress={item.onPress}
                         style={{ borderBottomWidth: 1, borderBottomColor: "black" }}
-                        className={" flex-row items-center p-2"}>
+                        className={"dark:bg-bg2 flex-row items-center p-2"}>
                             {item.icon}
-                            <Text className={"pl-2"}>{item.text}</Text>
+                            <Text className={"dark:text-white pl-2"}>{item.text}</Text>
                     </Pressable>
                 )}
                 // ItemSeparatorComponent={() => (
