@@ -22,10 +22,11 @@ const Profile = ({text, icon, onPress}: listBlockProps) => {
     const profileList =[
         {text: "Account", icon: <Feather name="user" size={24} color={colorScheme === "light" ? "black" : "white"} />,
             onPress: () => console.log("Account Pressed")},
+        
         {text: "Settings", icon: <Feather name="settings" size={24} color={colorScheme === "light" ? "black" : "white"} />,
             onPress: () => console.log("Settings Pressed")},
 
-        {text: "Theme: " + colorScheme, icon: <MaterialCommunityIcons name="theme-light-dark" size={24} color={colorScheme === "light" ? "black" : "white"}/>,
+        {text: "Theme: " + colorScheme, icon: <Ionicons name={colorScheme === "light" ? "sunny": "moon-sharp"} size={24} color={colorScheme === "light" ? "black" : "white"}/>,
             onPress: () => setColorScheme(colorScheme === "light" ? "dark" : "light")}
     ]
 

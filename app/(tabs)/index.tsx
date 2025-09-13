@@ -7,7 +7,7 @@ export default function Index() {
     const {colorScheme} = useColorScheme();
 
   return (
-    <ScrollView className={"dark:bg-bg"}>
+    <ScrollView showsVerticalScrollIndicator={false} className={"dark:bg-bg"}>
         <View className={"dark:bg-bg flex flex-col gap-5 items-center justify-center"}>
             <View className={" mt-4 flex-row h-20 items-center justify-center"}>
                 <AntDesign className={"pr-3"} name="left" size={26} color= {colorScheme === "light" ? "black" : "white"} />

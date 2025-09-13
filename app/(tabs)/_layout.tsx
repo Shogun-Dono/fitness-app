@@ -30,7 +30,7 @@ const _Layout = () => {
                     backgroundColor: colorScheme === "dark" ? fullConfig.theme.colors.bg2 : "white",
                 },
                 headerTintColor: colorScheme === "dark" ? "white" : "black",
-                headerStatusBarHeight: 10,
+                // headerStatusBarHeight: 10,
             }}
         >
             <Tabs.Screen name={"index"} options={{
@@ -42,8 +42,9 @@ const _Layout = () => {
             }}/>
 
             <Tabs.Screen
-                name="workout"
+                name="(workout)"
                 options={{
+                    headerShown: false,
                     title: 'Workout',
                     tabBarIcon: ({ color, size }) => (
                         <Ionicons name="barbell" size={size} color={color} />

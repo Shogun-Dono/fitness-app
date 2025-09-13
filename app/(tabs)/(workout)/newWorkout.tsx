@@ -1,11 +1,11 @@
 import {View, Text} from 'react-native'
 import React from 'react'
 
-const Workout = () => {
+const NewWorkout = () => {
     return (
         <View>
-            <Text>Workout</Text>
+            <Text>NewWorkout</Text>
         </View>
     )
 }
-export default Workout
+export default NewWorkout
