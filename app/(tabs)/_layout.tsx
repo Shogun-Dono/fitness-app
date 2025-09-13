@@ -23,7 +23,7 @@ const _Layout = () => {
                 },
                 headerShown: true,
                 headerTitleAlign: 'center',
-                headerTintColor: fullConfig.theme.colors.bg2,
+                // headerTintColor: fullConfig.theme.colors.bg2,
                 headerStatusBarHeight: 10,
             }}
         >
