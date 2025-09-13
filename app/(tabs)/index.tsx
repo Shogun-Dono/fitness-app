@@ -19,7 +19,7 @@ export default function Index() {
 
 
             <View className={"dark:bg-bg2 z-50 border border-black h-[9rem] w-[27rem] rounded-2xl items-center justify-center"} >
-                <Text className={"text-xl text-text-light dark:text-text-dark"}>Your Fitness Score</Text>
+                <Text className={"text-xl text-text-light dark:text-text-dark"}>Today&#39;s Fitness Score</Text>
                 <Text className={"text-3xl mt-3 text-text-light dark:text-text-dark"}>{"80"}</Text>
             </View>
 
