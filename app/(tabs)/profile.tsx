@@ -31,7 +31,7 @@ const Profile = ({text, icon, onPress}: listBlockProps) => {
     ]
 
     return (
-        <View className={"dark:bg-bg"}>
+        <View className={"dark:bg-bg h-full px-2"}>
             <FlatList
                 className={"dark:bg-bg"}
                 data={profileList}

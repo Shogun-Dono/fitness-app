@@ -1,12 +1,37 @@
-import {ScrollView, Text, View} from "react-native";
+import {Pressable, ScrollView, Text, View} from "react-native";
 import AntDesign from '@expo/vector-icons/AntDesign';
 import {useColorScheme} from "nativewind";
+import {Ionicons} from "@expo/vector-icons";
+import React, {JSX} from "react";
+import {useRouter} from "expo-router";
+
+interface indieBreakdownProps{
+    icon: JSX.Element,
+    score: number
+    page: string,
+}
 
 
 export default function Index() {
     const {colorScheme} = useColorScheme();
-    
+    const router = useRouter();
+
     const widgetWidth = "24"
+
+    const indieBreakdown = ({icon, score, page}: indieBreakdownProps) => {
+        return(
+            <Pressable
+                className={"flex-col border border-bg2 justify-center items-center rounded-xl min-w-20 dark:bg-bg2"}
+                onPress={() => {
+                    // @ts-ignore
+                    router.push(`/${page}`);
+                }}
+            >
+                {icon}
+                <Text className={"dark:text-text-dark mt-1"}>{score}</Text>
+            </Pressable>
+        )
+    }
 
   return (
     <View className={"dark:bg-bg items-center justify-center"}>
@@ -27,12 +52,19 @@ export default function Index() {
                 <Text className={"text-3xl mt-3 text-text-light dark:text-text-dark"}>{"80"}</Text>
             </View>
 
+            <View className={`h-20 flex-row justify-center gap-8 border-bg2 rounded-xl`}>
+                {indieBreakdown({icon: <Ionicons name="barbell" size={22} color={colorScheme === "light" ? "black" : "white"} />, score:80, page: "(workout)"})}
+                {indieBreakdown({icon: <Ionicons name="fast-food" size={22} color={colorScheme === "light" ? "black" : "white"} />, score:80, page: "meals"})}
+                {indieBreakdown({icon: <Ionicons name="bed" size={22} color={colorScheme === "light" ? "black" : "white"} />, score:80, page: "sleep"})}
+            </View>
+
             <View className={`dark:bg-bg2 py-2 flex flex-col px-8 border border-bg2 rounded-xl w-[${widgetWidth}rem] items-center justify-center`}>
                 <Text className={"text-2xl text-text-light dark:text-text-dark"}>Breakdown:</Text>
                 <Text className={"py-4 text-text-light dark:text-text-dark text-center"}>Workout: Lorem ipsum dolor sit amet, consectetur adipiscing ~ 80</Text>
                 <Text className={"py-4 text-text-light dark:text-text-dark text-center"}>Sleep: Lorem ipsum dolor sit amet, consectetur adipiscing ~ 60</Text>
                 <Text className={"py-4 text-text-light dark:text-text-dark text-center"}>Meals: Lorem ipsum dolor sit amet, consectetur adipiscing ~ 90</Text>
             </View>
+
 
             <View className={`dark:bg-bg2 flex flex-col px-8 border border-bg2 rounded-xl w-[${widgetWidth}rem]`}>
                 <Text className={"mt-14 text-2xl text-text-light dark:text-text-dark"}>Fitness Score</Text>

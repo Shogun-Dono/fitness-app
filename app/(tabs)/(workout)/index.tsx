@@ -22,35 +22,38 @@ export default function Index() {
     ]
 
     return (
-        <View>
+        <View className={"dark:bg-bg h-full"}>
             <View className="flex-row gap-8 justify-center mt-8">
                 <Pressable
                     onPress={() => (router.push('/newWorkout'))}
-                    className="active:bg-gray-200 border w-36 h-12 items-center justify-center rounded-xl"
+                    className="active:bg-gray-200 dark:bg-bg2 border w-36 h-12 items-center justify-center rounded-xl"
                 >
-                    <Text className="text-center">New Workout</Text>
+                    <Text className="text-center dark:text-text-dark">New Workout</Text>
                 </Pressable>
 
                 <Pressable
                     onPress={() => (router.push('/newRoutine'))}
-                    className="active:bg-gray-200 border w-36 h-12 items-center justify-center rounded-xl"
+                    className="active:bg-gray-200 dark:bg-bg2 border w-36 h-12 items-center justify-center rounded-xl"
                 >
-                    <Text className="text-center">New Routine</Text>
+                    <Text className="text-center dark:text-text-dark">New Routine</Text>
                 </Pressable>
             </View>
 
             <View className={"px-8 mt-20"}>
-                <Text className={"ml-2 mb-2 text-xl"}>Your Routines {<MaterialCommunityIcons name="dumbbell" size={18} color="black" />}</Text>
+                <Text className={"ml-2 mb-2 text-xl dark:text-text-dark"}>Your Routines {<MaterialCommunityIcons name="dumbbell" size={18} color="black" />}</Text>
 
                 <FlatList
                     data={routineArr}
                     keyExtractor={(item, index) => index.toString()}
                     renderItem={({item}) => (
                     <View className={"flex-row mt-4 dark:bg-bg2 border border-bg2 rounded-xl w-[23rem] h-24 items-center"}>
-                        <Text className={"flex-grow ml-4"}>{item.name}</Text>
-                        <View className={"flex-shrink mr-7 text-center"}>
-                            <Text className={""}>Last done:</Text>
-                            <Text>{item.date}</Text>
+                        <View className={"flex flex-col items-start justify-center flex-grow"}>
+                            <Text className={" dark:text-text-dark min-w-32 text-center"}>{item.name}</Text>
+                        </View>
+
+                        <View className={"flex-shrink mr-7 text-center dark:text-text-dark"}>
+                            <Text className={"dark:text-text-dark"}>Last done:</Text>
+                            <Text className={"dark:text-text-dark"}>{item.date}</Text>
                         </View>
                     </View>
                 )}/>
