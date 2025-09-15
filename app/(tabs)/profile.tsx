@@ -37,13 +37,13 @@ const Profile = ({text, icon, onPress}: listBlockProps) => {
                 data={profileList}
                 keyExtractor={(item) => item.text}
                 renderItem={({item}) => (
-                    <Pressable
-                        onPress={item.onPress}
-                        style={{ borderBottomWidth: 1, borderBottomColor: "black" }}
-                        className={"dark:bg-bg2 flex-row items-center p-2"}>
+                        <Pressable
+                            onPress={item.onPress}
+                            className={"mt-1 dark:bg-bg2 flex-row items-center p-2 border border-bg2 rounded-xl h-14"}>
                             {item.icon}
                             <Text className={"dark:text-white pl-2"}>{item.text}</Text>
-                    </Pressable>
+                        </Pressable>
+
                 )}
                 // ItemSeparatorComponent={() => (
                 //     <View style={{ height: 1, backgroundColor: "black"}}></View>

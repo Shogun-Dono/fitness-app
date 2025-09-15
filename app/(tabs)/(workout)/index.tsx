@@ -1,10 +1,25 @@
-import {View, Text, Pressable} from 'react-native'
-import React from 'react'
+import {View, Text, Pressable, Animated} from 'react-native'
+import React, {JSX} from 'react'
 import {useRouter} from "expo-router";
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import FlatList = Animated.FlatList;
 
-const Index = () => {
+
+interface routineProps {
+    name: string,
+    date: string,
+    exercises?: JSX.Element
+}
+
+export default function Index() {
 
     const router = useRouter()
+
+    let routineArr = [
+        {name: "Upper Body", date: "15/09/2025"},
+        {name: "Lower Body", date: "15/09/2025"},
+        {name: "Chest", date: "15/09/2025"},
+    ]
 
     return (
         <View>
@@ -23,7 +38,23 @@ const Index = () => {
                     <Text className="text-center">New Routine</Text>
                 </Pressable>
             </View>
+
+            <View className={"px-8 mt-20"}>
+                <Text className={"ml-2 mb-2 text-xl"}>Your Routines {<MaterialCommunityIcons name="dumbbell" size={18} color="black" />}</Text>
+
+                <FlatList
+                    data={routineArr}
+                    keyExtractor={(item, index) => index.toString()}
+                    renderItem={({item}) => (
+                    <View className={"flex-row mt-4 dark:bg-bg2 border border-bg2 rounded-xl w-[23rem] h-24 items-center"}>
+                        <Text className={"flex-grow ml-4"}>{item.name}</Text>
+                        <View className={"flex-shrink mr-7 text-center"}>
+                            <Text className={""}>Last done:</Text>
+                            <Text>{item.date}</Text>
+                        </View>
+                    </View>
+                )}/>
+            </View>
         </View>
     )
 }
-export default Index
