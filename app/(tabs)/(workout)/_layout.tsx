@@ -2,12 +2,15 @@ import { Stack } from "expo-router";
 import {useColorScheme} from "nativewind";
 import resolveConfig from "tailwindcss/resolveConfig";
 import tailwindConfig from "@/tailwind.config";
+import {Text, TextInput, View} from "react-native";
+import {useState} from "react";
 
 const fullConfig = resolveConfig(tailwindConfig);
 
 
 export default function _Layout() {
     const {colorScheme} = useColorScheme();
+
 
     return (
         <Stack
@@ -30,7 +33,10 @@ export default function _Layout() {
             {/* Screens for newWorkout and newRoutine */}
             <Stack.Screen
                 name="newWorkout"
-                options={{ title: 'New Workout' }}
+                options={{
+                    title: "New Workout",
+                    headerShown: true,
+                }}
             />
             <Stack.Screen
                 name="newRoutine"
