@@ -152,3 +152,4 @@ export async function setSleepForDay(date: string, sleep: Sleep) {
     data.sleep = sleep;
     await saveDayData(date, data);
 }
+

@@ -11,6 +11,7 @@ module.exports = {
 
                 bg: "#000000",
                 bg2: "#202020",
+                bg_dark_active: "#363636",
 
                 text: {
                     light: "#000000",

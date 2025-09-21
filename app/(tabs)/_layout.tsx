@@ -5,21 +5,22 @@ import tailwindConfig from '../../tailwind.config.js';
 import { Ionicons } from '@expo/vector-icons';
 import {useColorScheme} from "nativewind";
 
-const fullConfig = resolveConfig(tailwindConfig);
+import {colors} from "@/assets/constants/colors"
 
 
 
 const _Layout = () => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const {colorScheme} = useColorScheme();
 
     // @ts-ignore
     return (
         <Tabs
             screenOptions={{
-                tabBarActiveTintColor: fullConfig.theme.colors.primary,
+                tabBarActiveTintColor: colors.primary,
                 tabBarInactiveTintColor: "grey",
                 tabBarStyle: {
-                    backgroundColor: colorScheme === "dark" ? fullConfig.theme.colors.bg2 : "white",
+                    backgroundColor: colorScheme === "dark" ? colors.bg2 : "white",
                     height: 80,
                     paddingBottom: 5,
                     paddingTop: 5,
@@ -27,14 +28,15 @@ const _Layout = () => {
                 headerShown: true,
                 headerTitleAlign: "center",
                 headerStyle: {
-                    backgroundColor: colorScheme === "dark" ? fullConfig.theme.colors.bg2 : "white",
+                    backgroundColor: colorScheme === "dark" ? colors.bg2 : "white",
                 },
                 headerTintColor: colorScheme === "dark" ? "white" : "black",
                 // headerStatusBarHeight: 10,
             }}
         >
-            <Tabs.Screen name={"index"} options={{
+            <Tabs.Screen name={"(dashboard)"} options={{
                 title: 'Dashboard',
+                headerShown: false,
                 tabBarIcon: ({color, size }) => (
                     <Ionicons name="home" size={size} color={color} />
                 ),

@@ -2,13 +2,11 @@ import { Stack } from "expo-router";
 import {useColorScheme} from "nativewind";
 import resolveConfig from "tailwindcss/resolveConfig";
 import tailwindConfig from "@/tailwind.config";
-import {Text, TextInput, View} from "react-native";
-import {useState} from "react";
 
-const fullConfig = resolveConfig(tailwindConfig);
-
+import {colors} from "@/assets/constants/colors"
 
 export default function _Layout() {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const {colorScheme} = useColorScheme();
 
 
@@ -17,7 +15,7 @@ export default function _Layout() {
             screenOptions={{
                 headerTitleAlign: "center",
                 headerStyle: {
-                    backgroundColor: colorScheme === "dark" ? fullConfig.theme.colors.bg2 : "white",
+                    backgroundColor: colorScheme === "dark" ? colors.bg2 : "white",
                 },
                 headerTintColor: colorScheme === "dark" ? "white" : "black",
             }}
