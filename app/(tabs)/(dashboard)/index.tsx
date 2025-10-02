@@ -171,6 +171,8 @@ export default function Index() {
         }
     };
 
+    // @ts-ignore
+    // @ts-ignore
     return (
         <View className={"flex-1 dark:bg-bg items-center justify-center"}>
             {calendarVisible && (
@@ -234,7 +236,9 @@ export default function Index() {
                         className={" mt-4 flex-row h-20 items-center justify-center"}
 
                     >
-                        <AntDesign className={"pr-3"} name="left" size={26} color= {colorScheme === "light" ? "black" : "white"} />
+                        <Pressable className={""}>
+                            <AntDesign className={"pr-3"} name="left" size={26} color= {colorScheme === "light" ? "black" : "white"} />
+                        </Pressable>
                         <Pressable
                             className={"active:bg-gray-200 dark:active:bg-bg_dark_active dark:bg-bg2 border border-black h-20 w-[18rem] rounded-2xl items-center justify-center"}
                             onPress={() => {
@@ -247,7 +251,9 @@ export default function Index() {
                         >
                             <Text className={"text-text-light dark:text-text-dark"}>{"Thursday 12th September"}</Text>
                         </Pressable>
-                        <AntDesign className={"pl-3"} name="right" size={26} color = {colorScheme === "light" ? "black" : "white"} />
+                        <Pressable className={""}>
+                            <AntDesign className={"pl-3"} name="right" size={26} color = {colorScheme === "light" ? "black" : "white"} />
+                        </Pressable>
                     </View>
 
                     <View className={`mt-8 dark:bg-bg2 z-50 border border-black h-[7rem] w-[${widgetWidth}rem] rounded-2xl items-center justify-center`}>

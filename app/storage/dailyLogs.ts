@@ -13,14 +13,32 @@ export type Exercise =
     | {
     type: "weight-reps";
     exercise: string;
-    muscleGroup: string; // e.g. "Chest", "Back", "Legs"
+    "Difficulty Level": string;
+    "Target Muscle Group": string;
+    "Prime Mover Muscle": string;
+    "Secondary Muscle": string;
+    "Tertiary Muscle": string;
+    "Primary Equipment": string;
+    Posture: string;
+    "Single or Double Arm": string;
+    "Continuous or Alternating": string;
+    Grip: string;
     sets: SetEntry[];
     totalCaloriesBurned: number;
 }
     | {
     type: "timed";
     exercise: string;
-    muscleGroup: string;
+    "Difficulty Level": string;
+    "Target Muscle Group": string;
+    "Prime Mover Muscle": string;
+    "Secondary Muscle": string;
+    "Tertiary Muscle": string;
+    "Primary Equipment": string;
+    Posture: string;
+    "Single or Double Arm": string;
+    "Continuous or Alternating": string;
+    Grip: string;
     durationSec: number;
     caloriesBurned: number;
 };

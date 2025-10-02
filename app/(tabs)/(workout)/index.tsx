@@ -1,5 +1,5 @@
 import {View, Text, Pressable, Animated} from 'react-native'
-import React, {JSX, useContext} from 'react'
+import React, {JSX} from 'react'
 import {useRouter} from "expo-router";
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import FlatList = Animated.FlatList;
