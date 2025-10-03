@@ -37,7 +37,7 @@ const Profile = ({text, icon, onPress}: listBlockProps) => {
                 renderItem={({item}) => (
                         <Pressable
                             onPress={item.onPress}
-                            className={"mt-1 dark:bg-bg2 active:bg-gray-200 dark:active:bg-bg_dark_active flex-row items-center p-2 border border-bg2 rounded-xl h-14"}>
+                            className={"mt-2 dark:bg-bg2 active:bg-gray-200 dark:active:bg-bg_dark_active flex-row items-center p-2 border border-bg2 rounded-xl h-14"}>
                             {item.icon}
                             <Text className={"dark:text-white pl-2"}>{item.text}</Text>
                         </Pressable>
